@@ -259,43 +259,41 @@ onBeforeUnmount(() => {
 html, body {
   margin: 0;
   padding: 0;
-  /* 讓整個網頁無論如何延伸，底色都是這段漂亮的暖奶茶漸層，消除黑色區塊 */
-  background: linear-gradient(145deg, #fdfbf7 0%, #f0e5d3 50%, #e3ccb8 100%) !important;
-  position: fixed;
-  overflow: hidden; /* 徹底禁止頁面橡皮筋滾動 */
   width: 100%;
   height: 100%;
+  background-color: #e3ccb8 !important; 
+  overflow: hidden;
 }
 </style>
 
 <style scoped>
-@font-face {
-  font-family: 'ChenYuluoyan-2.0-Thin';
-  src: url('/ChenYuluoyan-2.0-Thin.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
 .player-container {
-  max-width: 100dvh;
+  max-width: 400px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
-  margin: 0 auto;
-  background: transparent;
+  height: 100vh;
+  
+  background: linear-gradient(145deg, #fdfbf7 0%, #f0e5d3 50%, #e3ccb8 100%);
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  padding-top: 50px;
-  padding-bottom: 120px;
-  box-sizing: border-box;
-  font-family: sans-serif;
   
+  /* 保持先前完美的彈性安全間距 */
+  padding-top: 40px;
+  padding-bottom: 120px; 
+  box-sizing: border-box;
+  
+  font-family: sans-serif;
   color: #5c4a3d;
-  position: relative;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
+
 
 .content-wrapper {
   position: relative; /* 讓內部的絕對定位以這個隱形箱子為基準 */
