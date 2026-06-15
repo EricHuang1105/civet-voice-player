@@ -256,13 +256,14 @@ onBeforeUnmount(() => {
 </script>
 
 <style>
-body {
+html, body {
   margin: 0;
   padding: 0;
-  /* 建議把 body 的背景色也設成跟播放器一樣的顏色，這樣上下滑動時才不會露出白底 */
-  background-color: #3b3831;
-  overflow: hidden; 
-  height: 100vh;
+  /* 讓整個網頁無論如何延伸，底色都是這段漂亮的暖奶茶漸層，消除黑色區塊 */
+  background: linear-gradient(145deg, #fdfbf7 0%, #f0e5d3 50%, #e3ccb8 100%) !important;
+  background-attachment: fixed; /* 讓漸層釘住不隨滾動變形 */
+  overflow: hidden; /* 徹底禁止頁面橡皮筋滾動 */
+  height: 100%;
 }
 </style>
 
@@ -278,7 +279,7 @@ body {
   max-width: 100dvh;
   width: 100%;
   margin: 0 auto;
-  background: linear-gradient(145deg, #fdfbf7 0%, #f0e5d3 50%, #e3ccb8 100%);
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
